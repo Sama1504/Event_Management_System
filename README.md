@@ -37,6 +37,23 @@ The system uses the following tables in the MySQL database:
 *   **Event:**  Stores event details (eventId, eventTitle, eventDescription, eventType, eventDate, eventStatus, customerId).
 *   **Attendee:**  Stores attendee information (attendeeId, attendeeName, eventId).
 *   **SpecialRequest:** Stores special requests related to events (requestId, requestDescription, eventId).
+*    +-------+      1      +--------------+
+     | User  |------<>-----| Customer    |
+     +-------+             +-------------+
+       |                        |
+       |                        |
+       1                        1
+       |                        |
+  +---------------+        +-------+
+  | Administrator |        | Event |
+  +---------------+        +-------+
+                               |
+                               |
+                     1         N
+                     |         |
+           +----------+  +----------------+
+           | Attendee |  | SpecialRequest |
+           +----------+  +----------------+
 
 ## Getting Started
 
@@ -52,6 +69,15 @@ The system uses the following tables in the MySQL database:
 3.  **Running the Application:**
     *   Run the `WelcomePageUI.java` file as a Java application.
     *   Register as a customer or administrator, log in, and interact with the system's functionalities.
+  
+4.  **Demo of the Application:**
+    *![image](https://github.com/Sama1504/Event_Management_System/assets/96735639/d742b35c-82e8-4809-936e-11ddb495afe8)
+    
+    * ![image](https://github.com/Sama1504/Event_Management_System/assets/96735639/3823554d-9f14-460b-a72c-d9144f9b4d69)
+    
+    * https://github.com/Sama1504/Event_Management_System/assets/96735639/3e4c23a9-488c-4a03-835c-8b4ac08339cf
+
+    * https://github.com/Sama1504/Event_Management_System/assets/96735639/1e78c42e-5713-4943-88cd-983a96a3eac3
 
 ## Future Enhancements
 
@@ -67,7 +93,3 @@ This project can be further enhanced with the following features:
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
